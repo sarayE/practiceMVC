@@ -8,5 +8,9 @@ namespace practiceMVCProj.Controllers
 {
     public class ComicBooksController : Controller
     {
+        public string Detail()
+        {
+            return "Hello from the ComicBooksController!";
+        }
     }
 }
