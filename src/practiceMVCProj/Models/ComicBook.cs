@@ -13,5 +13,22 @@ namespace practiceMVCProj.Models
         public string Description { get; set; }
         public Artist[] Artists { get; set; }
         public bool Favorite { get; set; }
+
+        public string DisplayText
+        {
+            get {
+                //return SeriesTitle + " #" + IssueNumber;
+                return $"{SeriesTitle} #{IssueNumber}";
+            }
+        }
+
+        //series-title-issuenumber.jpg
+        public string CoverImageFileName
+        {
+            get {
+                return $"{ SeriesTitle.Replace(" ", "-").ToLower()}-{IssueNumber}.jpg";
+            }
+        }
+
     }
 }
