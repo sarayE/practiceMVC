@@ -1,4 +1,5 @@
-﻿using practiceMVCProj.Models;
+﻿using practiceMVCProj.Data;
+using practiceMVCProj.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,20 @@ namespace practiceMVCProj.Controllers
 {
     public class ComicBooksController : Controller
     {
-        public ActionResult Detail()
+        private ComicBookRepository _comicBookRepository = null;
+        public ComicBooksController()
         {
-            return View();
+            _comicBookRepository = new ComicBookRepository();
+        }
+
+        public ActionResult Detail(int? id)//This is the URL
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            var comicBook = _comicBookRepository.GetComicBook((int)id);
+            return View(comicBook);
         }
     }
 }
