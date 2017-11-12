@@ -27,6 +27,17 @@
         </div>
     </div>
 
+    <!-- Return button -->
+    @if (ViewBag.ShowBackBar != null && ViewBag.ShowBackBar)
+    {
+        <div class="backbar">
+            <div class="container">
+                @*<a class="btn btn-default" href="/">Return to List</a>*@
+                @Html.ActionLink("Return to List", "Index", null, new { myAnonimusAttr = "btn btn-default" })
+            </div>
+        </div>
+    }
+
     <div class="container body-content">
         @RenderBody()
         <hr />

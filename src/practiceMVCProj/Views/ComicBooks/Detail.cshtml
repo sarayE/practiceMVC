@@ -1,8 +1,9 @@
 ﻿@model practiceMVCProj.Models.ComicBook
 
 @{
-    ViewBag.Title = Model.DisplayText;
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = Model.DisplayText;
+    ViewBag.ShowBackBar = true;
 }
 
 <h2>@Model.DisplayText</h2>
